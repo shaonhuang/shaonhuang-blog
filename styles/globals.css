@@ -1,4 +1,4 @@
-:root {
+/* :root {
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
@@ -98,10 +98,36 @@ body {
 a {
   color: inherit;
   text-decoration: none;
-}
+} */
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+} */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .prose blockquote {
+    @apply not-italic;
+  }
+
+  .prose blockquote p:first-of-type::before {
+    @apply content-none;
+  }
+
+  .prose blockquote p:last-of-type::after {
+    @apply content-none;
+  }
+
+  .prose .katex-html {
+    @apply overflow-x-auto overflow-y-hidden;
+  }
+
+  .prose .data-footnote-backref {
+    @apply font-mono font-normal;
   }
 }

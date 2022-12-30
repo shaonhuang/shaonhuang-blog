@@ -1,6 +1,27 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import { Analytics } from '@vercel/analytics/react';
+import { DefaultSeo } from 'next-seo';
+import type { AppProps } from 'next/app';
+import siteConfig from '../site.config.js';
+import '../styles/globals.css';
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
-}
+
+const App = ({ Component, pageProps }: AppProps) => {
+  return (
+    <>
+      <DefaultSeo
+        titleTemplate={`%s | ${siteConfig.title}`}
+        defaultTitle={siteConfig.title}
+        description={siteConfig.description}
+        twitter={{
+          cardType: 'summary',
+          site: siteConfig.twitter.handle,
+          handle: siteConfig.twitter.handle,
+        }}
+      />
+      <Component {...pageProps} />
+      <Analytics />
+    </>
+  );
+};
+
+export default App;
