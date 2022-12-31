@@ -9,13 +9,13 @@ const siteConfig = {
   /** @type {import('@giscus/react').GiscusProps} */
   giscus: {
     repo: 'shaonhuang/shaonhuang-blog',
-    // repoId: 'MDEwOlJlcG9zaXRvcnkxNTA1OTAxMTg=',
-    category: 'Announcements',
-    // categoryId: 'DIC_kwDOCPnSps4CSV3-',
-    strict: '1',
+    repoId: 'R_kgDOIso1uQ',
+    dataCategory: 'General',
+    dataCategoryId: 'DIC_kwDOIso1uc4CTVkk',
+    strict: '0',
     reactionsEnabled: '1',
     emitMetadata: '0',
-    inputPosition: 'top',
+    inputPosition: 'bottom',
     theme: 'preferred_color_scheme',
     lang: 'en',
   },
