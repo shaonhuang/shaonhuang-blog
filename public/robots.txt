@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://shaonhuang.app
+
+# Sitemaps
+Sitemap: https://shaonhuang.app/sitemap.xml
