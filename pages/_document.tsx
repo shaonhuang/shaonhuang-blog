@@ -21,6 +21,13 @@ const Document = () => {
           integrity="sha384-Juol1FqnotbkyZUT5Z7gUPjQ9gzlwCENvUZTpQBAPxtusdwFLRy382PSDx5UUJ4/"
           crossOrigin="anonymous"
         />
+        {/**
+         * Indicate dark mode support
+         * Improves the default styling in dark mode, such as system controls
+         * and scrollbars
+         * @see https://web.dev/color-scheme/
+         */}
+        <meta name="color-scheme" content="light dark" />
       </Head>
       <body>
         <Main />

@@ -1,8 +1,13 @@
 const siteConfig = {
   title: 'shaonhuang',
   description: "Shaonhuang's Blog",
-  url: 'https://shaonhuang.app',
-  author: { name: 'shaonhuang' },
+  url: 'https://shaonhuang-blog.vercel.app/',
+  author: { name: 'shaonhuang', email: 'yukuaihuang@icloud.com' },
+  links: {
+    github: 'https://github.com/shaonhuang',
+    twitter: 'https://twitter.com/yukuaihuang',
+    linkedin: 'https://www.linkedin.com/in/yukuaihuang/',
+  },
   twitter: {
     handle: '@yukuaihuang',
   },
@@ -10,12 +15,12 @@ const siteConfig = {
   giscus: {
     repo: 'shaonhuang/shaonhuang-blog',
     repoId: 'R_kgDOIso1uQ',
-    dataCategory: 'General',
-    dataCategoryId: 'DIC_kwDOIso1uc4CTVkk',
-    strict: '0',
+    category: 'General',
+    categoryId: 'DIC_kwDOIso1uc4CTVkk',
+    strict: '1',
     reactionsEnabled: '1',
     emitMetadata: '0',
-    inputPosition: 'bottom',
+    inputPosition: 'top',
     theme: 'preferred_color_scheme',
     lang: 'en',
   },
