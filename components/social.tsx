@@ -3,9 +3,9 @@ import {
   IconBrandLinkedin,
   IconBrandTwitter,
   IconMail,
-} from '@tabler/icons';
+} from '@tabler/icons-react';
 
-import type { TablerIcon } from '@tabler/icons';
+import { type Icon as TablerIcon } from '@tabler/icons-react';
 
 import siteConfig from '../site.config.js';
 
