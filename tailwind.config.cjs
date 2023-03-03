@@ -1,3 +1,5 @@
+const { fontFamily } = require('tailwindcss/defaultTheme');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -14,9 +16,28 @@ module.exports = {
         hotbrick: 'rgb(255 61 0)',
         pep: 'rgb(255,194,231)',
       },
+      fontFamily: {
+        serif: ['var(--font-noto-serif-sc)', ...fontFamily.serif],
+      },
+      maxWidth: {
+        prose: '640px',
+      },
       boxShadow: {
         highlight: 'inset 0 -.5em 0 0',
       },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            maxWidth: theme('maxWidth.prose'),
+          },
+        },
+        zinc: {
+          css: {
+            '--tw-prose-pre-bg': theme('colors.zinc.100'),
+            '--tw-prose-invert-pre-bg': theme('colors.zinc.800 / 50%'),
+          },
+        },
+      }),
     },
   },
   plugins: [require('@tailwindcss/typography')],

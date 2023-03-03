@@ -3,10 +3,11 @@ import path from 'path';
 import { MDXRemoteSerializeResult } from 'next-mdx-remote';
 import { serialize } from 'next-mdx-remote/serialize';
 import rehypeKatex from 'rehype-katex';
-import rehypePrism from 'rehype-prism-plus';
+import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeRewrite from 'rehype-rewrite';
 import remarkMath from 'remark-math';
 import remarkGfm from 'remark-gfm';
+import remarkUnwrapImages from 'remark-unwrap-images';
 import { imageSize } from 'image-size';
 import { Element } from 'hast';
 
@@ -38,7 +39,7 @@ export const getMdxSourceBySlug = async (
   const source = await getSourceBySlug(slug);
   const mdxSource = await serialize(source, {
     mdxOptions: {
-      remarkPlugins: [remarkGfm, remarkMath],
+      remarkPlugins: [remarkGfm, remarkMath, remarkUnwrapImages],
       rehypePlugins: [
         [
           rehypeRewrite,
@@ -48,9 +49,13 @@ export const getMdxSourceBySlug = async (
           },
         ],
         rehypeKatex,
-        rehypePrism,
+        [
+          rehypePrettyCode,
+          {
+            theme: 'css-variables',
+          },
+        ],
       ],
-      development: false,
     },
     parseFrontmatter: true,
   });

@@ -1,20 +1,22 @@
 import Link from 'next/link';
-import siteConfig from '../site.config.js';
-import { Noto_Serif_SC } from '@next/font/google';
 import { PropsWithChildren } from 'react';
+import { Noto_Serif_SC } from '@next/font/google';
 import { Logo } from './Logo';
+import siteConfig from '../site.config.js';
 import { Email, Github, Linkedin, Twitter } from './social';
 
 const notoSerif = Noto_Serif_SC({
   weight: ['400', '600', '900'],
-  subsets: ['chinese-simplified'],
   display: 'swap',
+  variable: '--font-noto-serif-sc',
+  adjustFontFallback: false,
+  subsets: ['chinese-simplified'],
 });
 
 export const Layout = ({ children }: PropsWithChildren) => {
   return (
     <div
-      className={`container mx-auto min-h-screen min-w-[360px] px-5 ${notoSerif.className}`}
+      className={`container mx-auto min-h-screen min-w-[360px] px-5 ${notoSerif.variable} font-serif`}
     >
       <header className="mx-auto mb-12 mt-8 flex max-w-prose items-center justify-between">
         <Link href="/">

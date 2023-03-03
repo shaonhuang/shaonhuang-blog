@@ -17,8 +17,8 @@ interface SocialProps {
 
 export const Social = ({ href, title, Icon }: SocialProps) => {
   return (
-    <a href={href} title={title} target="_blank" rel="me noreferrer">
-      <Icon className="inline-block" size="1em" />
+    <a href={href} title={title} target="_blank" rel="noreferrer me">
+      <Icon className="inline-block stroke-[1.6px]" size="1em" />
     </a>
   );
 };
@@ -26,7 +26,7 @@ export const Social = ({ href, title, Icon }: SocialProps) => {
 export const Github = () => (
   <Social
     href={siteConfig.links.github}
-    title="Github"
+    title="GitHub"
     Icon={IconBrandGithub}
   />
 );
@@ -42,7 +42,7 @@ export const Twitter = () => (
 export const Linkedin = () => (
   <Social
     href={siteConfig.links.linkedin}
-    title="Linkedin"
+    title="LinkedIn"
     Icon={IconBrandLinkedin}
   />
 );
