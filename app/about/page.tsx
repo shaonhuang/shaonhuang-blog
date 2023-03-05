@@ -1,4 +1,4 @@
-import { Giscus }  from 'components/giscus';
+import { Giscus } from 'components/giscus';
 
 import siteConfig from 'site.config.js';
 
@@ -9,12 +9,8 @@ export const metadata = {
 
 const AboutPage = () => {
   return (
-    <article className="prose prose-zinc mx-auto dark:prose-invert prose-headings:font-black dark:prose-invert">
-      <h1>
-        <span className="shadow-highlight shadow-franklin dark:shadow-blurple">
-            I am...
-        </span>
-      </h1>
+    <article className="prose prose-zinc mx-auto dark:prose-invert dark:prose-invert prose-headings:font-black">
+      <h1>Here’s a little bit about me.</h1>
       <p>Hi.</p>
       <hr />
       <Giscus {...siteConfig.giscus} mapping="specific" term="About" />

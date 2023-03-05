@@ -4,9 +4,9 @@ export type LogoProps = Omit<JSX.IntrinsicElements['svg'], 'scale'> & {
 
 export const Logo = ({ scale = 1, ...props }: LogoProps) => (
   <svg
-    width={108 * scale}
+    width={128 * scale}
     height={40 * scale}
-    viewBox="0 0 108 40"
+    viewBox="0 0 128 40"
     fill="currentColor"
     xmlns="http://www.w3.org/2000/svg"
     role="img"
