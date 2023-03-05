@@ -9,7 +9,7 @@ export const metadata = {
 
 const AboutPage = () => {
   return (
-    <article className="prose prose-zinc mx-auto prose-headings:font-black dark:prose-invert">
+    <article className="prose prose-zinc mx-auto dark:prose-invert prose-headings:font-black dark:prose-invert">
       <h1>
         <span className="shadow-highlight shadow-franklin dark:shadow-blurple">
             I am...
