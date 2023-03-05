@@ -1,17 +1,23 @@
 import React from 'react';
 
-import { Noto_Serif_SC } from '@next/font/google';
 import Link from 'next/link';
+import { Noto_Serif_SC } from '@next/font/google';
 
+import { Analytics } from 'components/analytics';
 import { Logo } from 'components/logo';
-import { Email, Github, Linkedin, Twitter } from 'components/social';
+import {
+  Github,
+  Twitter,
+  Linkedin,
+  Email,
+} from 'components/social';
 
 import { globalMetadata } from './metadata';
 
 import siteConfig from 'site.config.js';
 
-import 'katex/dist/katex.min.css';
 import './globals.css';
+import 'katex/dist/katex.min.css';
 
 export const metadata = globalMetadata;
 
@@ -54,6 +60,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
             </div>
           </footer>
         </div>
+        <Analytics />
       </body>
     </html>
   );
