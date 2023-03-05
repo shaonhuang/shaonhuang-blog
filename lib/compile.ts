@@ -1,6 +1,5 @@
 import path from 'node:path';
 
-import { imageSize } from 'image-size';
 import rehypeKatex from 'rehype-katex';
 import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeRewrite from 'rehype-rewrite';
@@ -8,11 +7,11 @@ import remarkDirective from 'remark-directive';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import remarkUnwrapImages from 'remark-unwrap-images';
-
-import { visit } from 'unist-util-visit';
+import { imageSize } from 'image-size';
 
 import { type SerializeOptions } from 'next-mdx-remote/dist/types';
-import { CALLOUT_TYPES } from '../components/callout';
+
+import { remarkTransformDirectives } from './directives';
 
 const rewriteImageSize = (
   node: import('hast').Element,
@@ -33,31 +32,11 @@ const rewriteImageSize = (
   }
 };
 
-const remarkCallout = () => {
-  // annotating types here causes TypeScript language server to lag
-  const transformer = (tree: any) => {
-    visit(tree, (node) => {
-      if (node.type !== 'containerDirective') return;
-      if (!CALLOUT_TYPES.includes(node.name)) return;
-
-      const calloutType = node.name;
-
-      node.type = 'mdxJsxFlowElement';
-      node.name = 'Callout';
-      node.attributes = [
-        { type: 'mdxJsxAttribute', name: 'type', value: calloutType },
-      ];
-    });
-  };
-
-  return transformer;
-};
-
 export const mdxOptions = {
   remarkPlugins: [
     remarkGfm,
     remarkDirective,
-    remarkCallout,
+    remarkTransformDirectives,
     remarkMath,
     remarkUnwrapImages,
   ],
