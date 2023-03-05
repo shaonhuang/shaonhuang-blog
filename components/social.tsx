@@ -7,13 +7,13 @@ import {
 
 import { type Icon as TablerIcon } from '@tabler/icons-react';
 
-import siteConfig from '../site.config.js';
+import siteConfig from 'site.config.js';
 
-interface SocialProps {
+export type SocialProps = {
   href: string;
   title: string;
   Icon: TablerIcon;
-}
+};
 
 export const Social = ({ href, title, Icon }: SocialProps) => {
   return (

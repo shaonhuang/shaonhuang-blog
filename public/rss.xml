@@ -2,21 +2,21 @@
 <rss version="2.0">
     <channel>
         <title>shaonhuang</title>
-        <link>https://shaonhuang.app</link>
+        <link>https://shaonhuang-blog.vercel.app/</link>
         <description>Shaonhuang's Blog</description>
-        <lastBuildDate>Sat, 31 Dec 2022 08:31:40 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 05 Mar 2023 08:03:38 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <image>
             <title>shaonhuang</title>
-            <url>https://shaonhuang.app/icon.png</url>
-            <link>https://shaonhuang.app</link>
+            <url>https://shaonhuang-blog.vercel.app//icon.png</url>
+            <link>https://shaonhuang-blog.vercel.app/</link>
         </image>
         <copyright>shaonhuang</copyright>
         <item>
             <title><![CDATA[关于写blog]]></title>
-            <link>https://shaonhuang.app/posts/about-blog</link>
-            <guid>https://shaonhuang.app/posts/about-blog</guid>
+            <link>https://shaonhuang-blog.vercel.app//posts/about-blog</link>
+            <guid>https://shaonhuang-blog.vercel.app//posts/about-blog</guid>
             <pubDate>Wed, 07 Nov 2018 00:00:00 GMT</pubDate>
         </item>
     </channel>

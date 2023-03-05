@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://shaonhuang.app
+Host: https://shaonhuang-blog.vercel.app/
 
 # Sitemaps
-Sitemap: https://shaonhuang.app/sitemap.xml
+Sitemap: https://shaonhuang-blog.vercel.app/sitemap.xml

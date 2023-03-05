@@ -1,7 +1,6 @@
 import path from 'node:path';
 
-import { serialize } from 'next-mdx-remote/serialize';
-
+import { imageSize } from 'image-size';
 import rehypeKatex from 'rehype-katex';
 import rehypePrettyCode from 'rehype-pretty-code';
 import rehypeRewrite from 'rehype-rewrite';
@@ -9,43 +8,11 @@ import remarkDirective from 'remark-directive';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import remarkUnwrapImages from 'remark-unwrap-images';
-import { imageSize } from 'image-size';
 
 import { visit } from 'unist-util-visit';
 
-import { ALL_CALLOUT_TYPES } from '../components/Callout';
-
-export const compileMdx = async (source: string) => {
-  const mdxSource = await serialize(source, {
-    mdxOptions: {
-      remarkPlugins: [
-        remarkGfm,
-        remarkDirective,
-        remarkCallout,
-        remarkMath,
-        remarkUnwrapImages,
-      ],
-      rehypePlugins: [
-        [
-          rehypeRewrite,
-          {
-            selector: 'img',
-            rewrite: rewriteImageSize,
-          },
-        ],
-        rehypeKatex,
-        [
-          rehypePrettyCode,
-          {
-            theme: 'css-variables',
-          },
-        ],
-      ],
-    },
-    parseFrontmatter: true,
-  });
-  return mdxSource;
-};
+import { type SerializeOptions } from 'next-mdx-remote/dist/types';
+import { CALLOUT_TYPES } from '../components/callout';
 
 const rewriteImageSize = (
   node: import('hast').Element,
@@ -71,7 +38,7 @@ const remarkCallout = () => {
   const transformer = (tree: any) => {
     visit(tree, (node) => {
       if (node.type !== 'containerDirective') return;
-      if (!ALL_CALLOUT_TYPES.includes(node.name)) return;
+      if (!CALLOUT_TYPES.includes(node.name)) return;
 
       const calloutType = node.name;
 
@@ -85,3 +52,29 @@ const remarkCallout = () => {
 
   return transformer;
 };
+
+export const mdxOptions = {
+  remarkPlugins: [
+    remarkGfm,
+    remarkDirective,
+    remarkCallout,
+    remarkMath,
+    remarkUnwrapImages,
+  ],
+  rehypePlugins: [
+    [
+      rehypeRewrite,
+      {
+        selector: 'img',
+        rewrite: rewriteImageSize,
+      },
+    ],
+    rehypeKatex,
+    [
+      rehypePrettyCode,
+      {
+        theme: 'css-variables',
+      },
+    ],
+  ],
+} satisfies SerializeOptions['mdxOptions'];
