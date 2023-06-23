@@ -53,4 +53,7 @@ export const globalMetadata = {
     },
     description: siteConfig.description,
   },
+  other: {
+    ['baidu-site-verification']: 'codeva-cCG6s5St4i',
+  }
 } satisfies Metadata;
