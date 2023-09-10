@@ -55,5 +55,6 @@ export const globalMetadata = {
   },
   other: {
     ['baidu-site-verification']: 'codeva-cCG6s5St4i',
+    ['google-site-verification']: 'xVV_FKpkUxx5a0lBG9vlKU9RymK1F0cUrA--JuiAy1I',
   }
 } satisfies Metadata;
