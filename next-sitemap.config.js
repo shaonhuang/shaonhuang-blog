@@ -4,7 +4,7 @@ import siteConfig from './site.config.js';
 const nextSitemapConfig = {
   siteUrl: siteConfig.url,
   generateRobotsTxt: true,
-  generateIndexSitemap: false,
+  generateIndexSitemap: true,
 };
 
 export default nextSitemapConfig;
