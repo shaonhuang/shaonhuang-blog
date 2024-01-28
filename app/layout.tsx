@@ -2,6 +2,7 @@ import React from 'react';
 
 import Link from 'next/link';
 import { Noto_Serif_SC } from 'next/font/google';
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 import { Analytics } from 'components/analytics';
 import { Logo } from 'components/logo';
@@ -67,6 +68,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           </footer>
         </div>
         <Analytics />
+        <GoogleAnalytics gaId="G-ZL0PW4JKJW" />
       </body>
     </html>
   );
